@@ -1,0 +1,955 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+/* =========================
+FONDO PREMIUM SPA CLARO
+========================= */
+
+body.light-mode{
+    background:
+    linear-gradient(
+    135deg,
+    #f6f1eb 0%,
+    #ebe1d4 28%,
+    #d8c7b5 62%,
+    #bccbbd 100%);
+}
+
+body.dark-mode{
+    background:
+    linear-gradient(
+    135deg,
+    #2d2621 0%,
+    #3b342e 40%,
+    #5b6a5b 100%);
+}
+
+.background-animation{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+
+    background:
+    radial-gradient(
+    circle at top left,
+    rgba(212,191,161,.18),
+    transparent 35%),
+
+    radial-gradient(
+    circle at bottom right,
+    rgba(181,202,183,.20),
+    transparent 35%);
+}
+
+/* =========================
+CONTENEDOR
+========================= */
+
+.container{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:0;
+}
+
+/* =========================
+CARD PREMIUM
+========================= */
+
+.card{
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+
+    border-radius:0;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.96),
+    rgba(248,244,239,.92));
+
+    backdrop-filter:blur(30px);
+
+    border:none;
+
+    box-shadow:none;
+
+    transition:.4s ease;
+}
+
+/* =========================
+LADO IZQUIERDO
+========================= */
+
+.left{
+    flex:1.08;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:22px;
+
+    background:
+    linear-gradient(
+    160deg,
+    #6f5a4b 0%,
+    #a48772 32%,
+    #cdb7a1 65%,
+    #d9e3d6 100%);
+    }
+
+/* EFECTO SUAVE */
+
+.left::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,.14) 50%,
+    transparent 80%);
+
+    animation:shineMove 8s linear infinite;
+}
+
+@keyframes shineMove{
+
+    0%{
+        transform:translateX(-100%);
+    }
+
+    100%{
+        transform:translateX(100%);
+    }
+}
+
+/* =========================
+FOTO
+========================= */
+
+.photo-frame{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    border-radius:42px;
+
+    overflow:hidden;
+
+    border:
+    2px solid rgba(255,255,255,.45);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.15);
+
+    z-index:2;
+}
+
+.profile{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    /* AJUSTE DE FOTO */
+    object-position:center 18%;
+
+    transition:.5s ease;
+}
+
+.profile:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+OVERLAY
+========================= */
+
+.photo-overlay{
+    position:absolute;
+
+    left:50%;
+    bottom:24px;
+
+    transform:translateX(-50%);
+
+    width:360px;
+
+    padding:24px;
+
+    border-radius:34px;
+
+    text-align:center;
+
+    z-index:10;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(138,108,84,.78),
+    rgba(205,220,204,.48));
+
+    backdrop-filter:blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,.22);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.14);
+}
+
+.photo-overlay::before{
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-40%;
+
+    width:160px;
+    height:250%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.22),
+    transparent);
+
+    transform:rotate(25deg);
+
+    animation:overlayGlow 7s linear infinite;
+}
+
+@keyframes overlayGlow{
+
+    0%{
+        left:-50%;
+    }
+
+    100%{
+        left:140%;
+    }
+}
+
+.overlay-icon{
+    color:#ffffff;
+
+    font-size:1.8rem;
+
+    margin-bottom:10px;
+
+    position:relative;
+    z-index:2;
+}
+
+.photo-overlay span{
+    display:block;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:2.9rem;
+
+    color:#ffffff;
+
+    position:relative;
+
+    z-index:2;
+
+    text-shadow:
+    0 5px 15px rgba(0,0,0,.20);
+}
+
+.photo-overlay p{
+    margin-top:8px;
+
+    font-size:.92rem;
+
+    letter-spacing:4px;
+
+    color:#ffffff;
+
+    font-weight:500;
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* =========================
+LADO DERECHO
+========================= */
+
+.right{
+    flex:.92;
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:28px 60px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(255,250,245,.94),
+    rgba(242,234,226,.98));
+
+    gap:14px;
+}
+
+/* BOTÓN */
+
+.theme-toggle{
+    position:absolute;
+
+    top:22px;
+    right:22px;
+
+    width:58px;
+    height:58px;
+
+    border:none;
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#ffffff;
+
+    color:#8f7a67;
+
+    font-size:1.2rem;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.theme-toggle:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+    text-align:center;
+    margin-top:0;
+}
+
+.lotus{
+    color:#b8c8b5;
+
+    font-size:1.7rem;
+
+    margin-bottom:10px;
+}
+
+.firstname{
+    display:block;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:4.3rem;
+
+    line-height:.85;
+
+    color:#9b846f;
+}
+
+.lastname{
+    display:block;
+
+    font-size:3.7rem;
+
+    line-height:.85;
+
+    margin-top:-4px;
+
+    font-weight:700;
+
+    color:#4e3c31;
+}
+
+.profession{
+    margin-top:12px;
+
+    letter-spacing:4px;
+
+    color:#8e7763;
+
+    font-weight:600;
+
+    font-size:.9rem;
+}
+/* =========================
+FRASE
+========================= */
+
+.quote{
+    margin:12px 0;
+
+    text-align:center;
+}
+
+.quote i{
+    color:#bfcdbd;
+
+    font-size:1rem;
+}
+
+.quote p{
+    margin:8px 0;
+
+    line-height:1.6;
+
+    font-size:.95rem;
+
+    color:#76685d;
+}
+/* =========================
+CONTACTOS
+========================= */
+
+.contact{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.contact-btn{
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:22px 28px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:
+    1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 15px 30px rgba(126,104,85,.10);
+}
+
+.contact-btn::before{
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+    left:-20%;
+
+    width:120px;
+    height:320%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.24),
+    transparent);
+
+    transform:rotate(25deg);
+
+    transition:.6s;
+}
+
+.contact-btn:hover::before{
+    left:130%;
+}
+
+.contact-btn:hover{
+    transform:
+    translateY(-5px)
+    scale(1.01);
+
+    box-shadow:
+    0 20px 40px rgba(126,104,85,.14);
+}
+
+/* BOTONES */
+
+.phone{
+    background:
+    linear-gradient(
+    135deg,
+    #8aa08b,
+    #5f7560);
+}
+
+.email{
+    background:
+    linear-gradient(
+    135deg,
+    #c7a98b,
+    #9e7d62);
+}
+
+.contact-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+/* ICONOS */
+
+.icon-circle{
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    rgba(255,255,255,.18);
+
+    box-shadow:
+    0 0 12px rgba(255,255,255,.14);
+}
+
+.phone-icon,
+.email-icon{
+    color:white;
+}
+
+.phone-text,
+.email-text,
+.arrow{
+    color:white;
+}
+
+/* =========================
+SOCIAL
+========================= */
+
+.social{
+    margin-top:10px;
+    text-align:center;
+}
+
+.social span{
+    color:#8d7b6b;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+}
+
+.social-icons{
+    margin-top:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:16px;
+
+    padding-bottom:0;
+}
+
+.icon{
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.10);
+}
+
+.icon:hover{
+    transform:
+    translateY(-6px)
+    scale(1.08);
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.20);
+}
+
+/* =========================
+COLORES ORIGINALES
+========================= */
+
+.facebook{
+    background:#1877F2;
+}
+
+.instagram{
+    background:
+    linear-gradient(
+    135deg,
+    #F58529,
+    #DD2A7B,
+    #8134AF,
+    #515BD4);
+}
+
+.telegram{
+    background:#229ED9;
+}
+
+.tiktok{
+    background:#000000;
+}
+
+.x{
+    background:#111111;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+/* =========================
+DARK MODE
+========================= */
+
+body.dark-mode .card{
+    background:
+    linear-gradient(
+    135deg,
+    rgba(55,48,42,.95),
+    rgba(76,68,60,.92));
+}
+
+body.dark-mode .right{
+    background:
+    linear-gradient(
+    180deg,
+    rgba(55,48,42,.92),
+    rgba(70,62,55,.96));
+}
+
+body.dark-mode .lastname,
+body.dark-mode .quote p{
+    color:#f8f5f0;
+}
+
+body.dark-mode .profession{
+    color:#d9c7b1;
+}
+
+/* =========================
+TABLETS
+========================= */
+
+@media(max-width:1000px){
+
+    .card{
+        flex-direction:column;
+        height:100vh;
+    }
+
+    .left{
+        height:42%;
+        padding:12px;
+    }
+
+    .photo-frame{
+        width:100%;
+        height:100%;
+        border-radius:38px;
+    }
+
+    .profile{
+        object-fit:cover;
+        object-position:center 18%;
+    }
+
+    .photo-overlay{
+        width:240px;
+        padding:14px;
+        bottom:10px;
+    }
+
+    .photo-overlay span{
+        font-size:1.7rem;
+    }
+
+    .photo-overlay p{
+        font-size:.7rem;
+    }
+
+    .right{
+        height:58%;
+        padding:18px;
+    }
+
+    .firstname{
+        font-size:2.5rem;
+    }
+
+    .lastname{
+        font-size:2.2rem;
+    }
+
+    .profession{
+        font-size:.72rem;
+    }
+
+    .quote p{
+        font-size:.78rem;
+    }
+
+    .contact-btn{
+        padding:12px 14px;
+        font-size:.72rem;
+    }
+
+    .icon{
+        width:42px;
+        height:42px;
+        font-size:.9rem;
+    }
+}
+
+/* =========================
+MOVILES Y GALAXY A23
+========================= */
+
+@media screen and (max-width:480px){
+
+    html,
+    body{
+        height:100%;
+        overflow:hidden;
+    }
+
+    .container{
+        height:100vh;
+        padding:0;
+    }
+
+    .card{
+        width:100%;
+        height:100vh;
+        flex-direction:column;
+    }
+
+    /* FOTO */
+
+    .left{
+        height:26%;
+        padding:6px;
+    }
+
+    .profile{
+        object-fit:cover;
+        object-position:center 20%;
+    }
+
+    .photo-overlay{
+        width:140px;
+        padding:4px 6px;
+        bottom:4px;
+        border-radius:14px;
+    }
+
+    .overlay-icon{
+        font-size:.75rem;
+        margin-bottom:1px;
+    }
+
+    .photo-overlay span{
+        font-size:.9rem;
+        line-height:1;
+    }
+
+    .photo-overlay p{
+        margin-top:2px;
+        font-size:.35rem;
+        letter-spacing:1px;
+    }
+
+    /* CONTENIDO */
+
+    .right{
+        height:74%;
+        padding:8px 12px;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+    }
+
+    .theme-toggle{
+        width:46px;
+        height:46px;
+        top:6px;
+        right:10px;
+        font-size:.9rem;
+    }
+
+    /* HEADER */
+
+    .header{
+        margin-top:2px;
+    }
+
+    .lotus{
+        font-size:.95rem;
+        margin-bottom:1px;
+    }
+
+    .firstname{
+        font-size:1.55rem;
+        line-height:.8;
+    }
+
+    .lastname{
+        font-size:1.45rem;
+        margin-top:-4px;
+    }
+
+    .profession{
+        margin-top:2px;
+        font-size:.45rem;
+        letter-spacing:1.3px;
+    }
+
+    /* FRASE */
+
+   .quote{
+    margin:0;
+}
+
+.quote i{
+    font-size:.45rem;
+    display:block;
+    line-height:1;
+}
+
+.quote p{
+    margin:1px 0;
+    font-size:.50rem;
+    line-height:1;
+    padding:0 18px;
+}
+    /* CONTACTO */
+
+    .contact{
+        gap:5px;
+        margin-top:3px;
+    }
+
+    .contact-btn{
+    padding:4px 10px;
+    min-height:42px;
+    font-size:.58rem;
+    border-radius:18px;
+}
+
+    .icon-circle{
+    width:22px;
+    height:22px;
+}
+
+    .contact-left{
+        gap:8px;
+    }
+
+    .phone-text,
+    .email-text{
+        font-size:.58rem;
+    }
+
+    .arrow{
+        font-size:.7rem;
+    }
+
+    /* REDES */
+
+    .social{
+    margin-top:2px;
+    padding-bottom:65px;
+}
+
+    .social span{
+        font-size:.62rem;
+        letter-spacing:1px;
+    }
+
+    .social-icons{
+        margin-top:4px;
+        gap:6px;
+        padding-bottom:0;
+    }
+
+    .icon{
+    width:38px;
+    height:38px;
+    font-size:.9rem;
+}
+
+}
